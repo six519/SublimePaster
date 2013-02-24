@@ -5,7 +5,7 @@ def load():
     import lodgeit
     import dpaste
     import pastie
-
+    import pastebin
 
 class TransportError(Exception):
     pass

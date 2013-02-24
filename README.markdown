@@ -34,6 +34,17 @@ A good example for using Pastie is:
         "private": true,
     }
 
+An example for using Pastebin.com is:
+
+    "pastebin": {
+        "mode": "pastebin",
+        "username" : "six519",
+        "password" : "mypassword",
+        "copy_to_clipboard" : true,
+        "prompt_on_post" : true,
+        "private": true
+    }
+
 # Usage
 
 Default key bindings are shift+ctrl+p to post and shift+ctrl+f to fetch
