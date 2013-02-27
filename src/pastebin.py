@@ -12,7 +12,7 @@ class PasteBinPython(api.PastebinImplementation):
     _name = 'pastebin'
 
     SYNTAXES = {
-       #'syntax'                :   'dpaste language code'
+       #'syntax'                :   'http://pastebin.com language code'
         "actionscript"          :   FORMAT_ACTIONSCRIPT,
         "applescript"           :   FORMAT_APPLESCRIPT,
         "asp"                   :   FORMAT_ASP,
@@ -76,11 +76,11 @@ class PasteBinPython(api.PastebinImplementation):
             except PastebinBadRequestException as e:
                 raise api.TransportError("Invalid username or password")
 
-            try:
-                pbinURL = pbin.createPaste(content, filename, pl, isPrivate)
-                return pbinURL
-            except PastebinBadRequestException as e:
-                raise api.TransportError("An error occurred: %s" % str(e))
+        try:
+            pbinURL = pbin.createPaste(content, filename, pl, isPrivate)
+            return pbinURL
+        except PastebinBadRequestException as e:
+            raise api.TransportError("An error occurred: %s" % str(e))
 
     def fetch(self, paste_id):
         pbin = pastebin_python.PastebinPython(api_dev_key='f4dfe115d610ebddc278115d9f80752d')
